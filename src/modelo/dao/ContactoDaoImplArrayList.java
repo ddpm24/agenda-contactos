@@ -4,23 +4,37 @@ import modelo.javabean.Contacto;
 
 import java.util.ArrayList;
 
+/**
+ * Implementación de la interfaz ContactoDao que utiliza un ArrayList para almacenar los contactos en memoria.
+ */
 public class ContactoDaoImplArrayList implements ContactoDao {
 
+    /**
+     * Constructor que inicializa la lista de contactos y carga datos de ejemplo.
+     */
     private ArrayList<Contacto> contactos;
 
+    /**
+     * Carga datos de ejemplo en la lista de contactos.
+     */
     public ContactoDaoImplArrayList() {
-
         contactos = new ArrayList<>();
         cargardatos();
     }
 
+    /**
+     * Carga datos de ejemplo en la lista de contactos.
+     */
     private void cargardatos() {
         contactos.add(new Contacto("Deivi", "Perdomo", "644526468", "deivi@gmail.com","Jaztel"));
         contactos.add(new Contacto("Paco", "Ramirez", "644511168", "paco@gmail.com","Etecsa"));
         contactos.add(new Contacto("Jose", "Perez", "609326468", "jose@gmail.com","Vodafone"));
     }
 
-
+    /**
+     * Obtiene todos los contactos almacenados.
+     * @return La lista de todos los contactos.
+     */
     public ArrayList<Contacto> buscarTodos() {
         return contactos;
     }
