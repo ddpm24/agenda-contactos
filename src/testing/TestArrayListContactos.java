@@ -5,8 +5,15 @@ import modelo.javabean.Contacto;
 
 import java.util.ArrayList;
 
+/**
+ * Clase de pruebas para verificar el funcionamiento de la implementación ContactoDaoImplArrayList.
+ */
 public class TestArrayListContactos {
 
+    /**
+     * Método principal para ejecutar las pruebas.
+     * @param args Argumentos de la línea de comandos (no utilizados).
+     */
     public static void main(String[] args) {
         TestArrayListContactos cdao = new TestArrayListContactos();
         cdao.testAltaContacto();
@@ -19,6 +26,10 @@ public class TestArrayListContactos {
         cdao.testContactosPorEmpresa();
     }
 
+
+    /**
+     * Prueba la inserción de un nuevo contacto.
+     */
     void testAltaContacto() {
         ContactoDaoImplArrayList dao = new ContactoDaoImplArrayList();
         Contacto nuevoContacto = new Contacto("Juan", "Pérez", "123456789", "juan@example.com", "Empresa");
@@ -31,6 +42,9 @@ public class TestArrayListContactos {
         }
     }
 
+    /**
+     * Prueba la eliminación de un contacto existente.
+     */
     void testEliminarContacto() {
         ContactoDaoImplArrayList dao = new ContactoDaoImplArrayList();
         Contacto contactoAEliminar = dao.buscarUno("Deivi");
@@ -43,6 +57,9 @@ public class TestArrayListContactos {
         }
     }
 
+    /**
+     * Prueba la busqueda de un contacto existente.
+     */
     void testBuscarUno() {
         ContactoDaoImplArrayList dao = new ContactoDaoImplArrayList();
 
@@ -55,6 +72,9 @@ public class TestArrayListContactos {
         }
     }
 
+    /**
+     * Prueba la busqueda de un teléfono existente.
+     */
     void testBuscarTelefono() {
         ContactoDaoImplArrayList dao = new ContactoDaoImplArrayList();
 
@@ -67,6 +87,9 @@ public class TestArrayListContactos {
         }
     }
 
+    /**
+     * Prueba la busqueda de un email existente.
+     */
     void testBuscarEmail() {
         ContactoDaoImplArrayList dao = new ContactoDaoImplArrayList();
 
@@ -79,6 +102,9 @@ public class TestArrayListContactos {
         }
     }
 
+    /**
+     * Prueba la busqueda de contactos existentes por los tres primeros caracteres.
+     */
     void testBuscarContactosPorTresPrimeros() {
         ContactoDaoImplArrayList dao = new ContactoDaoImplArrayList();
 
@@ -93,6 +119,9 @@ public class TestArrayListContactos {
         }
     }
 
+    /**
+     * Prueba el cambio de datos.
+     */
     void testCambiarDatos() {
         ContactoDaoImplArrayList dao = new ContactoDaoImplArrayList();
         Contacto contactoAModificar = dao.buscarUno("Deivi");
@@ -110,6 +139,9 @@ public class TestArrayListContactos {
         }
     }
 
+    /**
+     * Prueba la busqueda de contactos por empresa.
+     */
     void testContactosPorEmpresa() {
         ContactoDaoImplArrayList dao = new ContactoDaoImplArrayList();
 
