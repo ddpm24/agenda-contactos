@@ -65,29 +65,45 @@ public class ContactoDaoImplArrayList implements ContactoDao {
 
     @Override
     public Contacto buscarTelefono(String telefono) {
-        for (Contacto contacto : contactos) {
-            if (contacto.getTelefono().equals(telefono)) {
-                return contacto;
+        int posEncontrada= -1;
+        //creamos un for para recorrer array
+        for (int i = 0; i < contactos.size(); i++) {
+            if (contactos.get(i).getTelefono()==telefono) {
+                posEncontrada=i;
+                break;
             }
         }
-        return null;
+        if (posEncontrada == -1) {
+            return null;
+        }else {
+
+            return contactos.get(posEncontrada);
+
+        }
     }
 
     @Override
     public Contacto buscarEmail(String email) {
-        for (Contacto contacto : contactos) {
-            if (contacto.getEmail().equalsIgnoreCase(email)) {
-                return contacto;
+        int posEncontrada= -1;
+        //creamos un for para recorrer array
+        for (int i = 0; i < contactos.size(); i++) {
+            if (contactos.get(i).getEmail()==email) {
+                posEncontrada=i;
+                break;
             }
         }
-        return null;
-    }
+        if (posEncontrada == -1) {
+            return null;
+        }else {
+            return contactos.get(posEncontrada);
 
+        }
+    }
     @Override
     public ArrayList<Contacto> buscarContactosPorTresPrimeros(String nombre) {
         ArrayList<Contacto> contactosEncontrados = new ArrayList<>();
         for (Contacto contacto : contactos) {
-            if (contacto.getNombre().toLowerCase().startsWith(nombre.toLowerCase().substring(0, 3))) {
+            if (contacto.getNombre().startsWith(nombre.substring(0, 3))) {
                 contactosEncontrados.add(contacto);
             }
         }
